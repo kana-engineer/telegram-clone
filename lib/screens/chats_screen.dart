@@ -69,12 +69,21 @@ class ChatsScreen extends StatelessWidget {
 
           SizedBox(height: 25,),
 
-          ChatTile(),
-          ChatTile(),
-          ChatTile(),
-          ChatTile(),
-          ChatTile(),
+          ChatTile(
+            name: "Alex Smith",
+            message: "Привет как дела",
+            time: "12:32",
+            unreadCount: 3,
+            userIcon: "A",
+          ),
 
+          ChatTile(
+            name: "John",
+            message: "Hello",
+            time: "13:20",
+            unreadCount: 5,
+            userIcon: "J",
+          ),
 
         ],
       ),

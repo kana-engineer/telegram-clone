@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ChatTile extends StatelessWidget {
-  const ChatTile({super.key});
+  final String name;
+  final String message;
+  final String time;
+  final int unreadCount;
+  final String userIcon;
+  const ChatTile({super.key, required this.name, required this.message, required this.time, required this.unreadCount, required this.userIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class ChatTile extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 28,
-                child: Text("A"),
+                child: Text(userIcon),
               ),
 
               SizedBox(width: 20,),
@@ -27,10 +32,10 @@ class ChatTile extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Alex Smith", style: TextStyle(
+                      Text(name, style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),),
-                      Text("12:45"),
+                      Text(time),
                     ],
                   ),
 
@@ -39,7 +44,7 @@ class ChatTile extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Привет! как дела?"),
+                      Expanded(child: Text(message, maxLines: 1, overflow: TextOverflow.ellipsis,)),
                       Container(
                         width: 22,
                         height: 22,
@@ -49,7 +54,7 @@ class ChatTile extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
 
-                        child: const Text("2", style: TextStyle(
+                        child: Text("${unreadCount}", style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
