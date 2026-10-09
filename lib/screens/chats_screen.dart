@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import '../screens/widgets/chat_tile.dart';
 
 class ChatsScreen extends StatelessWidget {
   const ChatsScreen({super.key});
@@ -69,64 +69,13 @@ class ChatsScreen extends StatelessWidget {
 
           SizedBox(height: 25,),
 
-          Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
-          ),
-          child:  Row(
-            children: [
-              CircleAvatar(
-                radius: 28,
-                child: Text("A"),
-              ),
+          ChatTile(),
+          ChatTile(),
+          ChatTile(),
+          ChatTile(),
+          ChatTile(),
 
-              SizedBox(width: 20,),
 
-              Expanded(child: 
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Alex Smith", style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Text("12:45"),
-                    ],
-                  ),
-
-                  SizedBox(height: 8,),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Привет! как дела?"),
-                      Container(
-                        width: 22,
-                        height: 22,
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF34C759),
-                          shape: BoxShape.circle,
-                        ),
-
-                        child: const Text("2", style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                        ),)
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              )
-            ],
-          ),
-            
-          ),
         ],
       ),
     );
