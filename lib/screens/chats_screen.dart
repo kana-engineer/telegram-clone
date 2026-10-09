@@ -87,6 +87,18 @@ class ChatsScreen extends StatelessWidget {
 
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/Icon.svg', width: 24, height: 24,), label: "Contacts"),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/Icon(1).svg', width: 24, height: 24,), label: "Calls"),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/Icon(2).svg', width: 24, height: 24,), label: "Chats"),
+          BottomNavigationBarItem(
+           icon: Icon(Icons.settings, size: 24),
+           label: "Settings",
+          ),
+        ],
+      ),
     );
   }
 }
