@@ -71,7 +71,7 @@ class ChatsScreen extends StatelessWidget {
 
           ChatTile(
             name: "Alex Smith",
-            message: "Привет как дела",
+            message: "Привет! как дела?",
             time: "12:32",
             unreadCount: 3,
             userIcon: "A",
@@ -81,7 +81,7 @@ class ChatsScreen extends StatelessWidget {
             name: "John",
             message: "Hello",
             time: "13:20",
-            unreadCount: 5,
+            unreadCount: 0,
             userIcon: "J",
           ),
 

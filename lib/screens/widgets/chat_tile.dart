@@ -45,21 +45,23 @@ class ChatTile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(child: Text(message, maxLines: 1, overflow: TextOverflow.ellipsis,)),
-                      Container(
-                        width: 22,
-                        height: 22,
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF34C759),
-                          shape: BoxShape.circle,
-                        ),
+                      if(unreadCount > 0)
+                        Container(
+                          width: 22,
+                          height: 22,
+                          alignment: Alignment.center,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF34C759),
+                            shape: BoxShape.circle,
+                          ),
 
-                        child: Text("${unreadCount}", style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                        ),)
-                      ),
+                          child: Text(unreadCount.toString(), style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),)
+                        ),
+                      
                     ],
                   ),
                 ],
