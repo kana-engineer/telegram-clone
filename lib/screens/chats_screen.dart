@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../screens/widgets/chat_tile.dart';
 
-class ChatsScreen extends StatelessWidget {
+class ChatsScreen extends StatefulWidget {
   const ChatsScreen({super.key});
+
+  @override
+  State<ChatsScreen> createState() => _ChatsScreen();
+}
+
+class _ChatsScreen extends State<ChatsScreen> {
+  
+  int selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -89,14 +97,61 @@ class ChatsScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        selectedItemColor: Colors.blueAccent,
+        unselectedItemColor: Colors.grey,
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
         items: [
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/Icon.svg', width: 24, height: 24,), label: "Contacts"),
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/Icon(1).svg', width: 24, height: 24,), label: "Calls"),
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/Icon(2).svg', width: 24, height: 24,), label: "Chats"),
-          BottomNavigationBarItem(
-           icon: Icon(Icons.settings, size: 24),
-           label: "Settings",
+         BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 6),
+              child: SvgPicture.asset(
+                'assets/icons/Icon.svg',
+                width: 24,
+                height: 24,
+              ),
+            ),
+            label: "Contacts",
           ),
+         BottomNavigationBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 6),
+            child: SvgPicture.asset(
+              'assets/icons/Icon(1).svg',
+              width: 24,
+              height: 24,
+            ),
+          ),
+          label: "Calls",
+        ),
+         BottomNavigationBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 6),
+            child: SvgPicture.asset(
+              'assets/icons/Icon(2).svg',
+              width: 24,
+              height: 24,
+            ),
+            ), 
+            label: "Chats",
+        ),
+         BottomNavigationBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(bottom: 6),
+            child: SvgPicture.asset(
+              'assets/icons/account-avatar-profile-user-9-svgrepo-com.svg',
+              width: 27,
+              height: 27,
+            ),
+            ),
+            label: "Settings"
+          )
         ],
       ),
     );
