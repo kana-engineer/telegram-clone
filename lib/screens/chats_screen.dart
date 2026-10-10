@@ -96,12 +96,14 @@ class _ChatsScreen extends State<ChatsScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+
         type: BottomNavigationBarType.fixed,
         selectedFontSize: 12,
         unselectedFontSize: 12,
         selectedItemColor: Colors.blueAccent,
         unselectedItemColor: Colors.grey,
         currentIndex: selectedIndex,
+
         onTap: (index) {
           setState(() {
             selectedIndex = index;
@@ -115,6 +117,10 @@ class _ChatsScreen extends State<ChatsScreen> {
                 'assets/icons/Icon.svg',
                 width: 24,
                 height: 24,
+                colorFilter: ColorFilter.mode(
+                  selectedIndex == 0 ?const Color(0xFF007AFF) : Colors.grey,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
             label: "Contacts",
@@ -126,6 +132,10 @@ class _ChatsScreen extends State<ChatsScreen> {
               'assets/icons/Icon(1).svg',
               width: 24,
               height: 24,
+              colorFilter: ColorFilter.mode(
+                selectedIndex == 1 ?  const Color(0xFF007AFF) : Colors.grey,
+                BlendMode.srcIn,
+              ),
             ),
           ),
           label: "Calls",
@@ -137,6 +147,10 @@ class _ChatsScreen extends State<ChatsScreen> {
               'assets/icons/Icon(2).svg',
               width: 24,
               height: 24,
+               colorFilter: ColorFilter.mode(
+                selectedIndex == 2 ? const Color(0xFF007AFF) : Colors.grey,
+                BlendMode.srcIn,
+              ),
             ),
             ), 
             label: "Chats",
