@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../screens/widgets/chat_tile.dart';
+import '../widgets/chat_tile.dart';
 
 class ChatsScreen extends StatefulWidget {
   const ChatsScreen({super.key});
