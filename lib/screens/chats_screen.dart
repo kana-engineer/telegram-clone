@@ -15,7 +15,7 @@ class _ChatsScreen extends State<ChatsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -100,7 +100,7 @@ class _ChatsScreen extends State<ChatsScreen> {
         type: BottomNavigationBarType.fixed,
         selectedFontSize: 12,
         unselectedFontSize: 12,
-        selectedItemColor: Colors.blueAccent,
+        selectedItemColor: Color(0xFF007AFF),
         unselectedItemColor: Colors.grey,
         currentIndex: selectedIndex,
 
@@ -158,10 +158,20 @@ class _ChatsScreen extends State<ChatsScreen> {
          BottomNavigationBarItem(
           icon: Padding(
             padding: EdgeInsets.only(bottom: 6),
-            child: SvgPicture.asset(
+            child: Container(
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: selectedIndex == 3 ? const Color(0xFF007AFF) : Colors.transparent,
+                  width: 2,
+                )
+              ),
+              child: SvgPicture.asset(
               'assets/icons/account-avatar-profile-user-9-svgrepo-com.svg',
               width: 27,
               height: 27,
+            ),
             ),
             ),
             label: "Settings"
