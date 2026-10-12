@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telegram_clone/screens/calls_screen.dart';
 import 'package:telegram_clone/screens/chats_screen.dart';
 import 'package:telegram_clone/screens/contacts_screen.dart';
+import 'package:telegram_clone/screens/settings_screen.dart';
 
 class MainScreen extends StatefulWidget{
   const MainScreen({super.key});
@@ -23,7 +24,7 @@ class _MainScreen extends State<MainScreen> {
           ContactsScreen(),
           CallsScreen(),
           ChatsScreen(),
-          Center(child: Text("Settings"),)
+          SettingsScreen()
         ],
       ),
         bottomNavigationBar: BottomNavigationBar(
