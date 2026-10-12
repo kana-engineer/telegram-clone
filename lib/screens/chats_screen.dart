@@ -2,16 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../widgets/chat_tile.dart';
 
-class ChatsScreen extends StatefulWidget {
+class ChatsScreen extends StatelessWidget {
   const ChatsScreen({super.key});
-
-  @override
-  State<ChatsScreen> createState() => _ChatsScreen();
-}
-
-class _ChatsScreen extends State<ChatsScreen> {
-  
-  int selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +77,39 @@ class _ChatsScreen extends State<ChatsScreen> {
             userIcon: "A",
           ),
 
+         
+          Padding(
+            padding: EdgeInsets.only(left: 92),
+            child:  Divider(
+              height: 1,
+              thickness: 0.5,
+              color: Colors.grey.shade400,
+            ),  
+          ),
+
           ChatTile(
             name: "John",
             message: "Hello",
             time: "13:20",
             unreadCount: 0,
+            userIcon: "J",
+          ),
+
+
+          Padding(
+            padding: EdgeInsets.only(left: 92),
+            child:  Divider(
+              height: 1,
+              thickness: 0.5,
+              color: Colors.grey.shade400,
+            ),  
+          ),
+
+          ChatTile(
+            name: "Joshua Lawrence",
+            message: "Let's choose the first option",
+            time: "9:29",
+            unreadCount: 2,
             userIcon: "J",
           ),
 
