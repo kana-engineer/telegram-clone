@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:telegram_clone/screens/calls_screen.dart';
 import 'package:telegram_clone/screens/chats_screen.dart';
 import 'package:telegram_clone/screens/contacts_screen.dart';
 
@@ -20,7 +21,7 @@ class _MainScreen extends State<MainScreen> {
         index: selectedIndex,
         children: [
           ContactsScreen(),
-          Center(child: Text("Calls"),),
+          CallsScreen(),
           ChatsScreen(),
           Center(child: Text("Settings"),)
         ],
