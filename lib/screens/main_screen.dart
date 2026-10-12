@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telegram_clone/screens/chats_screen.dart';
+import 'package:telegram_clone/screens/contacts_screen.dart';
 
 class MainScreen extends StatefulWidget{
   const MainScreen({super.key});
@@ -18,7 +19,7 @@ class _MainScreen extends State<MainScreen> {
       body: IndexedStack(
         index: selectedIndex,
         children: [
-          Center(child: Text("Contacts"),),
+          ContactsScreen(),
           Center(child: Text("Calls"),),
           ChatsScreen(),
           Center(child: Text("Settings"),)
