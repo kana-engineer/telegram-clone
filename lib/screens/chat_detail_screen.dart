@@ -3,13 +3,14 @@
 import 'package:flutter/material.dart';
 
 class ChatDetailScreen extends StatelessWidget {
-  const ChatDetailScreen({super.key});
+  final String name;
+  const ChatDetailScreen({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Alex Smith"),
+        title: Text(name),
       ),
 
       body: const Center(

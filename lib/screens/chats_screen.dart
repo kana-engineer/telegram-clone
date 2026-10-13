@@ -79,7 +79,8 @@ class ChatsScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ChatDetailScreen(),
+              MaterialPageRoute(builder: (context) => ChatDetailScreen(name: "Alex Smith",),
+              
               ),
               );
             }
@@ -102,7 +103,10 @@ class ChatsScreen extends StatelessWidget {
             unreadCount: 0,
             userIcon: "J",
             onTap: () {
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChatDetailScreen(name: "John"))
+              );
             },
           ),
 
@@ -123,7 +127,10 @@ class ChatsScreen extends StatelessWidget {
             unreadCount: 2,
             userIcon: "J",
             onTap: () {
-              
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => ChatDetailScreen(name: "Joshua Lawrence"))
+              );
             },
           ),
 
