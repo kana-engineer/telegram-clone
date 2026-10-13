@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:telegram_clone/screens/chat_detail_screen.dart';
 import '../widgets/chat_tile.dart';
 
 class ChatsScreen extends StatelessWidget {
@@ -75,6 +76,13 @@ class ChatsScreen extends StatelessWidget {
             time: "12:32",
             unreadCount: 3,
             userIcon: "A",
+            onTap: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ChatDetailScreen(),
+              ),
+              );
+            }
           ),
 
          
@@ -93,6 +101,9 @@ class ChatsScreen extends StatelessWidget {
             time: "13:20",
             unreadCount: 0,
             userIcon: "J",
+            onTap: () {
+
+            },
           ),
 
 
@@ -111,6 +122,9 @@ class ChatsScreen extends StatelessWidget {
             time: "9:29",
             unreadCount: 2,
             userIcon: "J",
+            onTap: () {
+              
+            },
           ),
 
         ],

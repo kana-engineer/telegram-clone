@@ -6,12 +6,14 @@ class ChatTile extends StatelessWidget {
   final String time;
   final int unreadCount;
   final String userIcon;
-  const ChatTile({super.key, required this.name, required this.message, required this.time, required this.unreadCount, required this.userIcon});
+  final VoidCallback onTap;
+  const ChatTile({super.key, required this.name, required this.message, required this.time, required this.unreadCount, required this.userIcon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return 
-        Padding(
+    return InkWell(
+      onTap: onTap,
+      child:  Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 8,
@@ -70,6 +72,7 @@ class ChatTile extends StatelessWidget {
             ],
           ),
             
-          );
+          ),
+    );
   }
 }
