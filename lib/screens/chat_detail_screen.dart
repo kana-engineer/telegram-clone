@@ -24,6 +24,34 @@ class ChatDetailScreen extends StatelessWidget {
          MessageBubble(message: "Привет! все хорошо.", isMine: true)
         ],
       ), 
+
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: EdgeInsetsGeometry.all(8),
+          child: Row(
+            children: [
+              const Icon(Icons.attach_file),
+
+              const SizedBox(width: 8,),
+
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Message",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    )
+                  ),
+                ),
+              ),
+
+              SizedBox(width: 8,),
+
+              const Icon(Icons.send),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
