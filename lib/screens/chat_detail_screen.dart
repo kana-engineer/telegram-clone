@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:telegram_clone/widgets/message_bubble.dart';
 
 class ChatDetailScreen extends StatelessWidget {
   final String name;
@@ -10,12 +11,19 @@ class ChatDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(name),
+        title: Center(
+          child: Text(name, style: TextStyle(
+            fontWeight: FontWeight.w500,
+          ),),
+        ),
       ),
 
-      body: const Center(
-        child: Text("Messages"),
-      ),
+      body: ListView(
+        children: [
+          MessageBubble(message: "Привет! как дела?", isMine: false),
+         MessageBubble(message: "Привет! все хорошо.", isMine: true)
+        ],
+      ), 
     );
   }
 }
